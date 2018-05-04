@@ -1,12 +1,10 @@
-// Memory Game
-// © 2014 Nate Wiley
-// License -- MIT
-// best in full screen, works on phones/tablets (min height for game is
-// 500px..) enjoy ;) Follow me on Codepen
 
 (function () {
 
+
   var Memory;
+  var quantity = document.getElementById("player-name");
+  var temp = document.getElementsByClassName('player');
   Memory = {
 
     init: function (cards) {
@@ -18,9 +16,19 @@
       this.shuffleCards(this.cardsArray);
       this.$startGame = $(".start-game");
       this.$buttonStart = $(".start");
+      this.$gamewrap = $('.game-wrap');
+      this.$gamewrap.hide();
+
+
       this.$buttonStart.on("click", function () {
+        var inpt = $(".player-name");
+        var player = $(".player");
+        player.append(inpt.val());
         Memory.$startGame.fadeOut();
+        Memory.$gamewrap.fadeIn();
         Memory.setup();
+        init();
+
       });
     },
 
@@ -31,6 +39,7 @@
     setup: function () {
       this.html = this.buildHTML();
       this.$game.html(this.html);
+
       this.$memoryCards = $(".card");
       this.paused = false;
       this.guess = null;
@@ -43,6 +52,8 @@
     },
     // kinda messy but hey
     cardClicked: function () {
+
+
       var mySound;
       mySound = soundManager.createSound({
         url: 'src/Sound.mp3'
@@ -126,12 +137,21 @@
     },
 
     buildHTML: function () {
+      this.$restart = $("button.restart-game");
+      this.$restart.on("click", function () {
+        Memory.$startGame.fadeIn();
+        Memory.$gamewrap.fadeOut();
+        Memory.shuffleCards(this.cardsArray);
+        Memory.setup();
+        StartStop();
+
+      });
       var frag = '';
       this.$cards.each(function (k, v) {
         frag += '<div class="card" data-id="' + v.id + '"><div class="inside">\
 				<div class="front"><img src="' + v.img + '"\
 				alt="' + v.name + '" /></div>\
-				<div class="back"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/codepen-logo.png"\
+				<div class="back"><img src="src/shirt.jpg"\
 				alt="Codepen" /></div></div>\
 				</div>';
       });
@@ -206,3 +226,33 @@
 
 
 })();
+
+
+function init()
+{
+  sec = 0;
+  setInterval(tick, 1000);
+}
+
+function tick()
+{
+  sec++;
+  document.getElementById("timer").
+      childNodes[0].nodeValue = sec;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

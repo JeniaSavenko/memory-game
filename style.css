@@ -6,7 +6,8 @@ html, body {
 
 body {
   min-height: 100%;
-  font-family: "Arial", sans-serif; }
+  font-family: "Arial", sans-serif;
+  background-color: #e5e5e5; }
 
 .wrap {
   position: relative;
@@ -67,6 +68,11 @@ body {
       display: block;
       margin: 0 auto;
       max-height: 100%; }
+  .card .back {
+    padding: 0; }
+    .card .back img {
+      height: 100%;
+      width: 100%; }
   .card .front {
     transform: rotateY(-180deg); }
     @media (max-width: 800px) {
@@ -159,11 +165,11 @@ body {
           .modal .social li a.facebook:hover {
             background: #4c70ba; }
         .modal .social li a.google {
-          background: #D34836; }
+          background: #d34836; }
           .modal .social li a.google:hover {
             background: #dc6e60; }
         .modal .social li a.twitter {
-          background: #4099FF; }
+          background: #4099ff; }
           .modal .social li a.twitter:hover {
             background: #73b4ff; }
 
@@ -181,5 +187,43 @@ footer {
     @media (max-width: 767px) {
       footer .disclaimer {
         font-size: 8px; } }
+
+.game-wrap {
+  height: 100%; }
+
+.start-game {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.name-label {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 200;
+  font-size: 60px; }
+
+.player-name {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  box-shadow: 2px 4px 1px rgba(0, 0, 0, 0.5); }
+
+.start {
+  margin-top: 30px;
+  width: 132px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: white; }
+
+.options {
+  display: flex;
+  justify-content: space-between; }
+
+.timer-wrap {
+  display: flex; }
+
+#timer {
+  margin-left: 10px; }
 
 /*# sourceMappingURL=style.css.map */
