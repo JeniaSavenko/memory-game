@@ -143,7 +143,7 @@
         Memory.$gamewrap.fadeOut();
         Memory.shuffleCards(this.cardsArray);
         Memory.setup();
-        StartStop();
+        clearInterval(tick);
 
       });
       var frag = '';
@@ -227,11 +227,16 @@
 
 })();
 
+var timer;
 
 function init()
 {
+
+  if(timer){
+    clearInterval(timer);
+  }
   sec = 0;
-  setInterval(tick, 1000);
+  timer = setInterval(tick, 1000);
 }
 
 function tick()
