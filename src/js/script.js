@@ -3,11 +3,9 @@
 
 
   var Memory;
-  var quantity = document.getElementById("player-name");
-  var temp = document.getElementsByClassName('player');
   Memory = {
 
-    init: function (cards) {
+    init: function () {
       this.$game = $(".game");
       this.$modal = $(".modal");
       this.$overlay = $(".modal-overlay");
@@ -18,9 +16,8 @@
       this.$buttonStart = $(".start");
       this.$gamewrap = $('.game-wrap');
       this.$gamewrap.hide();
-
-
       this.$buttonStart.on("click", function () {
+
         var inpt = $(".player-name");
         var player = $(".player");
         player.append(inpt.val());
@@ -153,8 +150,8 @@
         frag += '<div class="card" data-id="' + v.id + '"><div class="inside">\
 				<div class="front"><img src="' + v.img + '"\
 				alt="' + v.name + '" /></div>\
-				<div class="back"><img src="../src/image/shirt.jpg"\
-				alt="Codepen" /></div></div>\
+				<div class="back"><img src="src/image/shirt.jpg"\
+				alt="shirt" /></div></div>\
 				</div>';
       });
       return frag;
@@ -224,10 +221,7 @@
     },
   ];
 
-  Memory.init(cards);
-
-
-  var tmp
+  Memory.init();
 
 
 
