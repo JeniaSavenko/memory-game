@@ -5,7 +5,7 @@
   var Memory;
   Memory = {
 
-    init: function () {
+    init: function (cards) {
       this.$game = $(".game");
       this.$modal = $(".modal");
       this.$overlay = $(".modal-overlay");
@@ -221,7 +221,7 @@
     },
   ];
 
-  Memory.init();
+  Memory.init(cards);
 
 
 
