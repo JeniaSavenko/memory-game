@@ -113,6 +113,8 @@
     },
 
     reset: function () {
+      clearInterval(timer);
+      timer = setInterval(tick, 1000);
       this.hideModal();
       this.shuffleCards(this.cardsArray);
       this.setup();
@@ -223,6 +225,12 @@
   ];
 
   Memory.init(cards);
+
+
+  var tmp
+
+
+
 
 
 })();
