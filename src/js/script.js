@@ -20,7 +20,7 @@
 
         var inpt = $(".player-name");
         var player = $(".player");
-        player.append(inpt.val());
+        player.html(inpt.val());
         Memory.$startGame.fadeOut();
         Memory.$gamewrap.fadeIn();
         Memory.setup();
@@ -219,6 +219,7 @@
       img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/wordpress-logo.png",
       id: 12
     },
+      
   ];
 
   Memory.init(cards);
