@@ -56,7 +56,7 @@
 
       var mySound;
       mySound = soundManager.createSound({
-        url: 'src/Sound.mp3'
+        url: 'src/sound/Sound.mp3'
       });
       mySound.play();
       var _ = Memory;
@@ -69,7 +69,7 @@
         else if (_.guess == $(this).attr("data-id") && !$(this).hasClass("picked")) {
           var mySound;
           mySound = soundManager.createSound({
-            url: 'src/zvuk-puli.mp3'
+            url: 'src/sound/zvuk-puli.mp3'
           });
           mySound.play();
           $(".picked").addClass("matched");
@@ -92,7 +92,7 @@
     win: function () {
       var mySound;
       mySound = soundManager.createSound({
-        url: 'src/Sound.mp3'
+        url: 'src/sound/Sound.mp3'
       });
       mySound.play();
       this.paused = true;
@@ -153,7 +153,7 @@
         frag += '<div class="card" data-id="' + v.id + '"><div class="inside">\
 				<div class="front"><img src="' + v.img + '"\
 				alt="' + v.name + '" /></div>\
-				<div class="back"><img src="../image/shirt.jpg"\
+				<div class="back"><img src="../src/image/shirt.jpg"\
 				alt="Codepen" /></div></div>\
 				</div>';
       });
